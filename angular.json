@@ -49,8 +49,7 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-              "src/assets"
+              }
             ],
             "styles": [
               "src/styles.css"
@@ -79,7 +78,7 @@
               "sourceMap": true
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -118,8 +117,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }
