@@ -9,5 +9,4 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'my-app';
-  items: number[] = Array(10).map((_,idx) => idx+1)
 }
