@@ -1,10 +1,12 @@
-<main class="relative w-full bg-amber-300 bg-contain bg-no-repeat bg-blend-darken">
-    <section class=" flex flex-col gap-16">
-        <h4 class="font-main flex flex-col text-7xl leading-tight font-bold text-white"><span>The whole world</span> <span>awaits.</span></h4>
-    
+<main class="w-full px-12">
+    <section class="flex flex-col gap-16 bg-contain bg-no-repeat bg-blend-darken">
+        <h4 class="font-main flex flex-col text-7xl leading-tight font-bold text-white">
+          <span>The whole world</span>
+          <span>awaits.</span>
+        </h4>
+
         <app-search-lg></app-search-lg>
 
-    
         <div class="top-categories">
           <h6 class="mb-10 text-white font-[Helvetica] font-bold text-4xl">Top categories</h6>
           <ul class="font-main font-normal text-white/80 text-base flex justify-around overflow-hidden overflow-x-auto">
@@ -16,8 +18,27 @@
                 <p class="leading-none">Beaches</p>
               </li>
             }
-    
           </ul>
+        </div>
+      </section>
+      <section class="py-8">
+        <div>
+          <div class="explore">
+            <div class="flex justify-between items-center gap-6">
+              <div class="flex flex-col grow">
+                <h2 class="font-mont text-3xl font-bold">Explore Top Destinations</h2>
+                <p class="font-main text-[#112211] opacity-75">Search Flights & Places Hire to our most popular destinations</p>
+              </div>
+              <div>
+                <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">See All</button>
+              </div>
+            </div>
+            <div class="grid grid-cols-3 grid-rows-3 gap-8 mt-4">
+              @for (item of destinations; track $index) {
+                <app-destination-card [place]="item.place" [path]="item.path" [amenities]="item.amenities" />
+              }
+            </div>
+          </div>
         </div>
       </section>
 </main>
