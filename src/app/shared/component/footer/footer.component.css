@@ -1,0 +1,21 @@
+:host {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+ul.social-handles > li {
+    width: 26px;
+}
+
+.footer-section > div > div > div {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing) * 4);
+}
+
+.footer-section {
+    font-family: 'Netflix Sans', sans-serif;
+}

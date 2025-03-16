@@ -1,0 +1,15 @@
+:host {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 29px;
+    background: #FFF;
+    box-shadow: 0px 0px 16px 0px rgba(159, 116, 100, 0.25);
+    min-width: max-content;
+}
+
+
+.wrapper > div:not(:last-child) {
+    margin-bottom: 1rem;
+}

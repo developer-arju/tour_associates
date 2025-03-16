@@ -1,0 +1,23 @@
+<main class="relative w-full bg-amber-300 bg-contain bg-no-repeat bg-blend-darken">
+    <section class=" flex flex-col gap-16">
+        <h4 class="font-main flex flex-col text-7xl leading-tight font-bold text-white"><span>The whole world</span> <span>awaits.</span></h4>
+    
+        <app-search-lg></app-search-lg>
+
+    
+        <div class="top-categories">
+          <h6 class="mb-10 text-white font-[Helvetica] font-bold text-4xl">Top categories</h6>
+          <ul class="font-main font-normal text-white/80 text-base flex justify-around overflow-hidden overflow-x-auto">
+            @for (item of items; track item) {
+              <li class="px-4 max-w-min">
+                <div class="mb-2.5">
+                  <img class="block m-auto" src="assets/beaches.png" alt="beaches">
+                </div>
+                <p class="leading-none">Beaches</p>
+              </li>
+            }
+    
+          </ul>
+        </div>
+      </section>
+</main>

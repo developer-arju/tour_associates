@@ -1,0 +1,17 @@
+
+:host {
+    position: absolute;
+    top: 0;
+    inset: 0;
+    height: min-content;
+    z-index: 99;
+}
+
+.nav-container li {
+    padding: 4px 12px
+}
+
+.active-link {
+    border-bottom: 1px solid white;
+}
+
