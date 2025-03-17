@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { SearchLgComponent } from "./search-lg/search-lg.component";
 import { DestinationCardComponent } from '../../shared/component/destination-card/destination-card.component';
+import { HeadingsComponent } from '../../shared/component/headings/headings.component';
+import { OfferCardComponent } from '../../shared/component/offer-card/offer-card.component';
 
 type Destination = {
   place: string,
@@ -8,9 +10,16 @@ type Destination = {
   amenities: string[]
 }
 
+type Offer = {
+  path: string,
+  category: string,
+  title: string,
+  info: string
+}
+
 @Component({
   selector: 'app-home',
-  imports: [SearchLgComponent, DestinationCardComponent],
+  imports: [SearchLgComponent, DestinationCardComponent, HeadingsComponent, OfferCardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -18,49 +27,75 @@ export class HomeComponent {
   items: number[] = Array(10).map((_,idx) => idx+1)
   destinations: Destination[] = [
     {
-      place: "Dortmund",
-      path: "/assets/youtube.png",
+      place: "Kerala, India",
+      path: "/assets/Destination-images/destination-1.png",
       amenities: ["Flights", "Hotels", "Resorts"]
     },
     {
-      place: "Dortmund",
-      path: "/assets/youtube.png",
+      place: "Varanasi, UP",
+      path: "/assets/Destination-images/destination-2.png",
       amenities: ["Flights", "Hotels", "Resorts"]
     },
     {
-      place: "Dortmund",
-      path: "/assets/youtube.png",
+      place: "Bangkok",
+      path: "/assets/Destination-images/destination-3.png",
       amenities: ["Flights", "Hotels", "Resorts"]
     },
     {
-      place: "Dortmund",
-      path: "/assets/youtube.png",
+      place: "Malé, Maldives",
+      path: "/assets/Destination-images/destination-4.png",
       amenities: ["Flights", "Hotels", "Resorts"]
     },
     {
-      place: "Dortmund",
-      path: "/assets/youtube.png",
+      place: "Paris, France",
+      path: "/assets/Destination-images/destination-5.png",
       amenities: ["Flights", "Hotels", "Resorts"]
     },
     {
-      place: "Dortmund",
-      path: "/assets/youtube.png",
+      place: "Dubai, UAE",
+      path: "/assets/Destination-images/destination-6.png",
       amenities: ["Flights", "Hotels", "Resorts"]
     },
     {
-      place: "Dortmund",
-      path: "/assets/youtube.png",
+      place: "London, UK",
+      path: "/assets/Destination-images/destination-7.png",
       amenities: ["Flights", "Hotels", "Resorts"]
     },
     {
-      place: "Dortmund",
-      path: "/assets/youtube.png",
+      place: "Bali, Indonasia",
+      path: "/assets/Destination-images/destination-8.png",
       amenities: ["Flights", "Hotels", "Resorts"]
     },
     {
-      place: "Dortmund",
-      path: "/assets/youtube.png",
+      place: "Las Vegas",
+      path: "/assets/Destination-images/destination-9.png",
       amenities: ["Flights", "Hotels", "Resorts"]
+    },
+  ]
+  offers: Offer[] = [
+    {
+      path: "/assets/Offer-images/offer-1.png",
+      category: "Domestic Flights",
+      title: "Huge savings on flight with trxvl.",
+      info: "Book domestic flights starting @ just ₹1459"
+    },
+    {
+      path: "/assets/Offer-images/offer-2.png",
+      category: "Domestic Flights",
+      title: "Enjoy upto 20% off on International Hotels",
+      info: "Book domestic flights starting @ just ₹1459"
+    },
+    {
+      path: "/assets/Offer-images/offer-3.png",
+      category: "Bank Offer",
+      title: "Get upto 30% instant discount",
+      info: "Book domestic flights starting @ just ₹1459"
+    },
+    {
+      path: "/assets/Offer-images/offer-3.png",
+      category: "Domestic Flights",
+      title: "Huge savings on flight with trxvl.",
+      info: "Book domestic flights starting @ just ₹1459"
     },
   ]
 }
