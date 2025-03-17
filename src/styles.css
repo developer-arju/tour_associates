@@ -45,9 +45,15 @@
 
 body {
     position: relative;
-    min-height: 200vh;
 }
 
-body main {
-  padding-top: 100px;
+
+.page-wrapper main > section:first-child {
+    background: url(/assets/background.jpeg);
+    background-size: 100% 100%;
+    padding-bottom: 96px;
+}
+
+.page-wrapper main > section {
+    padding-inline: min(4rem, 10%);
 }
