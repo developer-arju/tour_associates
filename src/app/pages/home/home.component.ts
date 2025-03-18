@@ -3,7 +3,7 @@ import { SearchLgComponent } from "./search-lg/search-lg.component";
 import { DestinationCardComponent } from '../../shared/component/destination-card/destination-card.component';
 import { HeadingsComponent } from '../../shared/component/headings/headings.component';
 import { OfferCardComponent } from '../../shared/component/offer-card/offer-card.component';
-import { NavbarService } from '../../shared/services/navbar.service';
+import { NavbarService } from '../../shared/component/navbar/navbar.service';
 
 type Destination = {
   place: string,

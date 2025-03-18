@@ -1,3 +1,21 @@
-<main class="w-full min-h-dvh bg-white pt-24">
+<main class="w-full px-28 py-10">
+    <header class="mb-10">
+        <h4 class="font-fav text-3xl text-black mb-6">Favourites</h4>
+        <div class="relative grid grid-cols-[repeat(auto-fit,minmax(max-content,50%))] rounded-xl shadow-[0px_4px_16px_0px_rgba(17,34,17,0.05)] ">
+            <div class="px-6 py-4">
+                <p class="font-mont text-base text-[#121] font-semibold mb-2">Flights</p>
+                <p class="font-mont text-sm text-[#121]/40 leading-[1.15]">2 marked</p>
+            </div>
+            <div class="vertical-divider"></div>
+            <div class="px-6 py-4">
+                <p class="font-mont text-base text-[#121] font-semibold mb-2">Places</p>
+                <p class="font-mont text-sm text-[#121]/40 leading-[1.15]">2 marked</p>
+            </div>
+            <div class="active-bar flights"></div>
+        </div>
+    </header>
 
+    <section>
+        <app-list-item-one></app-list-item-one>
+    </section>
 </main>

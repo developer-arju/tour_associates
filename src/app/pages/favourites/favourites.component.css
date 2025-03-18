@@ -1,0 +1,26 @@
+.vertical-divider {
+    position: absolute;
+    top: 1rem;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    background-color: #D7E2EE;
+}
+
+.active-bar {
+    position: absolute;
+    bottom: 0;
+    height: 4px;
+    background-color: #8DD3BB;
+}
+
+.place.active-bar {
+    left: calc(50% + 1rem);
+    right: 1rem;
+}
+
+.flights.active-bar {
+    left: 1rem;
+    right: calc(50% + 1rem);
+}

@@ -32,28 +32,21 @@
     font-style: normal;
   }
 
+  @font-face {
+    font-family: "TradeGothic LT Extended";
+    src: url('/assets/fonts/Trade Gothic LT Std Bold Extended/Trade Gothic LT Std Bold Extended.otf');
+    font-weight: 700;
+    font-style: normal;
+  }
+
 @theme {
     --font-logo: "Readex Pro", sans-serif;
     --font-logo--font-variation-settings: "opsz" 32;
     --font-main: "Rethink Sans", sans-serif;
     --font-mont: "Montserrat", sans-serif;
+    --font-fav: "TradeGothic LT Extended", sans-serif;
 }
 
 @theme {
     --font-subscribe: "Poppins", sans-serif;
-}
-
-body {
-    position: relative;
-}
-
-
-.page-wrapper main > section:first-child {
-    background: url(/assets/background.jpeg);
-    background-size: 100% 100%;
-    padding-bottom: min(2rem, 96px);
-}
-
-.page-wrapper main > section {
-    padding-inline: min(4rem, 10%);
 }

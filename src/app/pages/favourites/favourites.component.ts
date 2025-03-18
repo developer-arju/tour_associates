@@ -1,9 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { NavbarService } from '../../shared/services/navbar.service';
+import { NavbarService } from '../../shared/component/navbar/navbar.service';
+import { ListItemOneComponent } from "../../shared/component/list-item-one/list-item-one.component";
 
 @Component({
   selector: 'app-favourites',
-  imports: [],
+  imports: [ListItemOneComponent],
   templateUrl: './favourites.component.html',
   styleUrl: './favourites.component.css'
 })

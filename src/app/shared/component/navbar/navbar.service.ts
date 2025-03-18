@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { computed, Injectable, signal } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -7,6 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class NavbarService {
   private bgSubject = new BehaviorSubject<string>("");
   backgroundColor = this.bgSubject.asObservable();
+
 
 
   setBg(color: string) {
