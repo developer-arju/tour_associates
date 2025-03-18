@@ -1,23 +1,49 @@
-<main class="relative w-full bg-amber-300 bg-contain bg-no-repeat bg-blend-darken">
-    <section class=" flex flex-col gap-16">
-        <h4 class="font-main flex flex-col text-7xl leading-tight font-bold text-white"><span>The whole world</span> <span>awaits.</span></h4>
-    
-        <app-search-lg></app-search-lg>
+<main class="w-full">
 
-    
-        <div class="top-categories">
-          <h6 class="mb-10 text-white font-[Helvetica] font-bold text-4xl">Top categories</h6>
-          <ul class="font-main font-normal text-white/80 text-base flex justify-around overflow-hidden overflow-x-auto">
-            @for (item of items; track item) {
-              <li class="px-4 max-w-min">
-                <div class="mb-2.5">
-                  <img class="block m-auto" src="assets/beaches.png" alt="beaches">
-                </div>
-                <p class="leading-none">Beaches</p>
-              </li>
-            }
-    
-          </ul>
-        </div>
-      </section>
+  <section class="flex flex-col justify-end gap-16 bg-contain bg-no-repeat bg-blend-darken min-h-dvh">
+    <h4 class="font-main flex flex-col text-7xl leading-tight font-bold text-white">
+      <span>The whole world</span>
+      <span>awaits.</span>
+    </h4>
+
+    <app-search-lg></app-search-lg>
+
+    <div class="top-categories">
+      <h6 class="mb-10 text-white font-[Helvetica] font-bold text-4xl">Top categories</h6>
+      <ul class="font-main font-normal text-white/80 text-base flex justify-around overflow-hidden overflow-x-auto">
+        @for (item of items; track item) {
+        <li class="px-4 max-w-min">
+          <div class="mb-2.5">
+            <img class="block m-auto" src="assets/beaches.png" alt="beaches">
+          </div>
+          <p class="leading-none">Beaches</p>
+        </li>
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-8">
+    <div class="explore">
+      <app-headings [heading]="'Explore Top Destinations'"
+        [subHeading]="'Search Flights & Places Hire to our most popular destinations'" />
+      <div class="grid lg:grid-cols-3 gap-8 mt-4">
+        @for (item of destinations; track $index) {
+        <app-destination-card [place]="item.place" [path]="item.path" [amenities]="item.amenities" />
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="py-8">
+    <div class="offers">
+      <app-headings [heading]="'Best Offers'"
+        [subHeading]="'Looking for your next adventure? Whether you’re seeking thrills or just want to chill, explore activities that match your vibe and make the most of your journey.'" />
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-4">
+        @for (item of offers; track $index) {
+          <app-offer-card [path]="item.path" [category]="item.category" [title]="item.title" [info]="item.info" />  
+        }
+      </div>
+    </div>
+  </section>
 </main>

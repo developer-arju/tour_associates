@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, input, OnInit } from '@angular/core';
+import { NavbarService } from '../../services/navbar.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,6 +7,13 @@ import { Component } from '@angular/core';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent {
-
+export class NavbarComponent implements OnInit {
+  backgroundColor!: string;
+  navService = inject(NavbarService)
+  
+  ngOnInit(): void {
+    this.navService.backgroundColor.subscribe(val => {
+      this.backgroundColor = val;
+    })
+  }
 }

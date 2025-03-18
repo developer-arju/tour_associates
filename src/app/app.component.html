@@ -1,5 +1,5 @@
-
-
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<app-navbar backgroundColor="transparent"></app-navbar>
+<div class="page-wrapper" [style.paddingBottom]="pageWrapperBottom">
+    <router-outlet></router-outlet>
+</div>
+<app-footer (hMax)="changeMainBottom($event)"></app-footer>
