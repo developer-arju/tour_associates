@@ -11,6 +11,4 @@ export class DestinationCardComponent {
   @Input() place: string = ""
   @Input() path: string = ""
   @Input() amenities: string[] = []
-
-
 }

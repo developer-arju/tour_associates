@@ -1,44 +1,49 @@
 <main class="w-full">
-  <section class="flex flex-col justify-end gap-8 bg-contain bg-no-repeat bg-blend-darken min-h-dvh">
-        <h4 class="font-main flex flex-col text-7xl leading-tight font-bold text-white">
-          <span>The whole world</span>
-          <span>awaits.</span>
-        </h4>
 
-        <app-search-lg></app-search-lg>
+  <section class="flex flex-col justify-end gap-16 bg-contain bg-no-repeat bg-blend-darken min-h-dvh">
+    <h4 class="font-main flex flex-col text-7xl leading-tight font-bold text-white">
+      <span>The whole world</span>
+      <span>awaits.</span>
+    </h4>
 
-        <div class="top-categories">
-          <h6 class="mb-10 text-white font-[Helvetica] font-bold text-4xl">Top categories</h6>
-          <ul class="font-main font-normal text-white/80 text-base flex justify-around overflow-hidden overflow-x-auto">
-            @for (item of items; track item) {
-              <li class="px-4 max-w-min">
-                <div class="mb-2.5">
-                  <img class="block m-auto" src="assets/beaches.png" alt="beaches">
-                </div>
-                <p class="leading-none">Beaches</p>
-              </li>
-            }
-          </ul>
-        </div>
-      </section>
-      <section class="py-8">
-        <div>
-          <div class="explore">
-            <div class="flex justify-between items-center gap-6">
-              <div class="flex flex-col grow">
-                <h2 class="font-mont text-3xl font-bold">Explore Top Destinations</h2>
-                <p class="font-main text-[#112211] opacity-75">Search Flights & Places Hire to our most popular destinations</p>
-              </div>
-              <div>
-                <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">See All</button>
-              </div>
-            </div>
-            <div class="grid grid-cols-3 grid-rows-3 gap-8 mt-4">
-              @for (item of destinations; track $index) {
-                <app-destination-card [place]="item.place" [path]="item.path" [amenities]="item.amenities" />
-              }
-            </div>
+    <app-search-lg></app-search-lg>
+
+    <div class="top-categories">
+      <h6 class="mb-10 text-white font-[Helvetica] font-bold text-4xl">Top categories</h6>
+      <ul class="font-main font-normal text-white/80 text-base flex justify-around overflow-hidden overflow-x-auto">
+        @for (item of items; track item) {
+        <li class="px-4 max-w-min">
+          <div class="mb-2.5">
+            <img class="block m-auto" src="assets/beaches.png" alt="beaches">
           </div>
-        </div>
-      </section>
+          <p class="leading-none">Beaches</p>
+        </li>
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-8">
+    <div class="explore">
+      <app-headings [heading]="'Explore Top Destinations'"
+        [subHeading]="'Search Flights & Places Hire to our most popular destinations'" />
+      <div class="grid lg:grid-cols-3 gap-8 mt-4">
+        @for (item of destinations; track $index) {
+        <app-destination-card [place]="item.place" [path]="item.path" [amenities]="item.amenities" />
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="py-8">
+    <div class="offers">
+      <app-headings [heading]="'Best Offers'"
+        [subHeading]="'Looking for your next adventure? Whether you’re seeking thrills or just want to chill, explore activities that match your vibe and make the most of your journey.'" />
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-4">
+        @for (item of offers; track $index) {
+          <app-offer-card [path]="item.path" [category]="item.category" [title]="item.title" [info]="item.info" />  
+        }
+      </div>
+    </div>
+  </section>
 </main>

@@ -51,7 +51,7 @@ body {
 .page-wrapper main > section:first-child {
     background: url(/assets/background.jpeg);
     background-size: 100% 100%;
-    padding-bottom: 2.5rem;
+    padding-bottom: min(2rem, 96px);
 }
 
 .page-wrapper main > section {
