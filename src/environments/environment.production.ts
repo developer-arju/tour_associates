@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  assetsUrl: '/tour_associates/assets/',
+  assetsUrl: '/tours_associates/docs/',
 };
