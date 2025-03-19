@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, computed, ElementRef, inject, input, OnInit, viewChild } from '@angular/core';
 import { SearchLgComponent } from "./search-lg/search-lg.component";
 import { DestinationCardComponent } from '../../shared/component/destination-card/destination-card.component';
 import { HeadingsComponent } from '../../shared/component/headings/headings.component';
@@ -26,7 +26,9 @@ type Offer = {
 })
 export class HomeComponent implements OnInit {
   navService = inject(NavbarService);
+  home = viewChild.required<ElementRef>("home");
   items: number[] = Array(10).map((_,idx) => idx+1)
+  navHeight!:string;
   destinations: Destination[] = [
     {
       place: "Kerala, India",
@@ -103,5 +105,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.navService.setBg("transparent")
+    this.navService.height.subscribe((height) => {
+      this.navHeight = height
+    })
+    this.home().nativeElement.style.paddingTop = `calc(100dvh - ${this.navHeight}px)`;
   }
 }

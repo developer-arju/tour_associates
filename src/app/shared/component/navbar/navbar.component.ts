@@ -31,6 +31,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     let height = this.navBar().nativeElement.offsetHeight + 16;
     console.log(height)
     this.navHeight.emit(height)
+    this.navService.setHeight(height)
   }
 
 }
