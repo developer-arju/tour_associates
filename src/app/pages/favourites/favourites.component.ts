@@ -9,9 +9,7 @@ import { ListItemOneComponent } from "../../shared/component/list-item-one/list-
   styleUrl: './favourites.component.css'
 })
 export class FavouritesComponent implements OnInit {
-  navService = inject(NavbarService)
-
+ 
   ngOnInit(): void {
-    this.navService.setBg("#141414")
   }
 }
