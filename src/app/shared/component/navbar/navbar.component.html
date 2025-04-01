@@ -1,9 +1,9 @@
-<nav #nav class="bg-[#141414]">
+<nav #nav class="bg-[#141414] px-8 py-6">
     <div class="flex justify-between items-center">
       <!-- logo container -->
       <ul class="flex gap-4 items-center">
         <li class="pr-4 border-r border-white">
-          <img class="w-12" src="./favicon.ico" alt="logo">
+          <img (load)="imgLoadHandler($event)" class="w-12" src="./favicon.ico" alt="logo">
         </li>
         <li>
           <h2 class="text-base leading-none font-logo font-bold text-white flex flex-col">

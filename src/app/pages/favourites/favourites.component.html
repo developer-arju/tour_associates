@@ -15,7 +15,9 @@
         </div>
     </header>
 
-    <section>
-        <app-list-item-one></app-list-item-one>
+    <section class="mb-4 flex flex-col gap-4">
+        <ng-template ngFor let-item [ngForOf]="items" let-i="index" [ngForTrackBy]="trackByFn">
+            <app-list-item-one></app-list-item-one>
+        </ng-template>
     </section>
 </main>

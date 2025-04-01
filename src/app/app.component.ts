@@ -1,16 +1,19 @@
-import { Component, ElementRef, viewChild } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, ElementRef, inject, OnInit, viewChild } from '@angular/core';
+import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
 import { NavbarComponent } from './shared/component/navbar/navbar.component';
 import { FooterComponent } from './shared/component/footer/footer.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, FooterComponent],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  router = inject(Router);
   main = viewChild.required<ElementRef>("main");
+  isActivated = false;
 
   title = 'my-app';
   pageWrapperBottom!: string;
@@ -24,4 +27,13 @@ export class AppComponent {
     console.log($event, "nav bar height")
     this.main().nativeElement.style.paddingTop = `${$event}px`;
   }
+
+  ngOnInit(): void {
+    this.router.events.subscribe(ev => {
+      if(ev instanceof NavigationEnd) {
+        this.isActivated = true
+      }
+    })
+  }
+
 }

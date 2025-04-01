@@ -1,12 +1,12 @@
 
 
 <div class="relative">
-  <app-navbar (navHeight)="setPaddingTop($event)" />
+  <app-navbar *ngIf="isActivated" (navHeight)="setPaddingTop($event)" />
 
   <div #main class="page-wrapper bg-white" >
       <router-outlet></router-outlet>
   </div>
   
-  <app-footer (hMax)="setPaddingBottom($event)" />
+  <app-footer *ngIf="isActivated" (hMax)="setPaddingBottom($event)" />
 </div>
 

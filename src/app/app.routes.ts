@@ -5,10 +5,10 @@ import { FavouritesComponent } from './pages/favourites/favourites.component';
 export const routes: Routes = [
     {
         path: "",
-        component: HomeComponent
+        loadComponent: async() => await import('./pages/home/home.component').then(p => p.HomeComponent),
     },
     {
         path: "favourites",
-        component: FavouritesComponent
+        loadComponent: async() => await import('./pages/favourites/favourites.component').then(p => p.FavouritesComponent),
     }
 ];

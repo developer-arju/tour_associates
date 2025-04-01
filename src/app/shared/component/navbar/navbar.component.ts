@@ -14,13 +14,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
 
   navHeight = output<number>()
 
-  paddingInline = "2rem";
-  paddingBlock = "1.5rem";
-
   ngOnInit(): void {
-    this.navBar().nativeElement.style.paddingInline = this.paddingInline;
-    this.navBar().nativeElement.style.paddingBlock = this.paddingBlock  ;
-
     this.navService.backgroundColor.subscribe(val => {
       this.navBar().nativeElement.style.backgroundColor = val;
     })
@@ -28,10 +22,15 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    let height = this.navBar().nativeElement.offsetHeight + 16;
-    console.log(height)
+    let height = this.navBar().nativeElement.offsetHeight;
     this.navHeight.emit(height)
     this.navService.setHeight(height)
   }
 
+
+  imgLoadHandler(ev:Event) {
+    let height = this.navBar().nativeElement.offsetHeight;
+    this.navHeight.emit(height)
+    this.navService.setHeight(height)
+  }
 }
