@@ -4,6 +4,7 @@ import { DestinationCardComponent } from '../../shared/component/destination-car
 import { HeadingsComponent } from '../../shared/component/headings/headings.component';
 import { OfferCardComponent } from '../../shared/component/offer-card/offer-card.component';
 import { NavbarService } from '../../shared/component/navbar/navbar.service';
+import { environment } from '../../../environments/environment';
 
 type Destination = {
   place: string,
@@ -29,6 +30,7 @@ export class HomeComponent implements OnInit {
   home = viewChild.required<ElementRef>("home");
   items: number[] = Array(10).map((_,idx) => idx+1)
   navHeight!:string;
+  assetUrl: string = environment.assetsUrl;
   destinations: Destination[] = [
     {
       place: "Kerala, India",

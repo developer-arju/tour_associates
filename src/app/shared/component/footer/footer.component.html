@@ -2,7 +2,7 @@
     <div class="company md:w-3/12 mb-6">
         <ul class="flex gap-4 items-center">
             <li class="pr-4 border-r border-white">
-              <img class="w-12" src="./favicon.ico" alt="logo">
+              <img class="w-12" [src]="assetsUrl + '/favicon.ico'" alt="logo">
             </li>
             <li>
               <h2 class="text-base leading-none font-logo font-bold text-white flex flex-col">
@@ -41,10 +41,10 @@
         <div class="flex items-center justify-between mb-6">
             <button class="px-2 py-1 md:px-4 md:py-3 border-[#808080] border-1">Helmet KOD</button>
             <ul class="flex gap-5 social-handles">
-                <li><img src="/assets/facebook.png" alt=""></li>
-                <li><img src="/assets/instagram.png" alt=""></li>
-                <li><img src="/assets/twitter.png" alt=""></li>
-                <li><img src="/assets/youtube.png" alt=""></li>
+                <li><img [src]="assetsUrl + '/assets/facebook.png'" alt=""></li>
+                <li><img [src]="assetsUrl + '/assets/instagram.png'" alt=""></li>
+                <li><img [src]="assetsUrl + '/assets/twitter.png'" alt=""></li>
+                <li><img [src]="assetsUrl + '/assets/youtube.png'" alt=""></li>
             </ul>
         </div>
         <div>

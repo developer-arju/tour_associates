@@ -1,4 +1,5 @@
 import { Component, input, Input } from '@angular/core';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-offer-card',
@@ -7,6 +8,7 @@ import { Component, input, Input } from '@angular/core';
   styleUrl: './offer-card.component.css'
 })
 export class OfferCardComponent {
+  assetsUrl = environment.assetsUrl
   category = input.required<string>();
   path = input.required<string>();
   title = input.required<string>();
